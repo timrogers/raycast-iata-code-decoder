@@ -25,4 +25,4 @@ jobs:
             ${{ runner.os }}-node-
         if: ${{ !env.ACT }}
       - run: npm install
-      - run: npm run lint
+      - run: npx eslint .
