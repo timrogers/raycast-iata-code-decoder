@@ -1,5 +1,5 @@
 # IATA Code Decoder Changelog
 
-## Hello 👋 - (2022-03-20)
+## v1.0.0 - (2022-03-20)
 
 Initial release ❤️
