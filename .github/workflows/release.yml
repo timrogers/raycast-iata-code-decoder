@@ -13,4 +13,4 @@ jobs:
         with:
           extensions_fork: timrogers/extensions
           github_access_token: ${{ secrets.gh_access_token }}
-          extension_path: extensions/iata-code-decoder
+          extension_name: iata-code-decoder
