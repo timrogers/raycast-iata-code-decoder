@@ -50,7 +50,7 @@ jobs:
         working-directory: my-extension
         if: steps.check_changes.outputs.changed == 1
       - name: Configure Git user information so we can commit
-        run: git config user.name 'timrogers' && git config user.email 'me@timrogers.co.uk'
+        run: git config user.name 'github-actions[bot]' && git config user.email 'github-actions[bot]@users.noreply.github.com'
         shell: bash
         working-directory: my-extension
         if: steps.check_changes.outputs.changed == 1
@@ -67,7 +67,7 @@ jobs:
       - name: Create pull request (if it doesn't already exist)
         id: create_pull_request
         # If there is already a PR for this branch, then we'll skip creating a new PR and return the URL of the existing one
-        run: echo "::set-output name={url}::$(gh pr create --head upstream-${{ steps.get_most_recent_changes_sha.outputs.SHA }} --assignee @me --repo timrogers/raycast-iata-code-decoder --title "Sync upstream changes from ${{ steps.get_most_recent_changes_sha.outputs.SHA }} and earlier" --body "This PR should be merged without modifications so that this repo reflects what is upstream in the raycast/extensions repo.")"
+        run: echo "::set-output name={url}::$(gh pr create --head upstream-${{ steps.get_most_recent_changes_sha.outputs.SHA }} --assignee timrogers --repo timrogers/raycast-iata-code-decoder --title "Sync upstream changes from ${{ steps.get_most_recent_changes_sha.outputs.SHA }} and earlier" --body "This PR should be merged without modifications so that this repo reflects what is upstream in the raycast/extensions repo.")"
         shell: bash
         working-directory: my-extension
         env:
