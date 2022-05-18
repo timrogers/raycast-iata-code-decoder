@@ -71,5 +71,6 @@ jobs:
         shell: bash
         working-directory: my-extension
         env:
+          GH_DEBUG: api
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         if: steps.check_changes.outputs.changed == 1
