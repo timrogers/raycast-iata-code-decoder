@@ -50,7 +50,7 @@ jobs:
         working-directory: my-extension
         if: steps.check_changes.outputs.changed == 1
       - name: Configure Git user information so we can commit
-        run: git config user.name github-actions && git config user.email github-actions@github.com
+        run: git config user.name 'timrogers' && git config user.email 'me@timrogers.co.uk'
         shell: bash
         working-directory: my-extension
         if: steps.check_changes.outputs.changed == 1
