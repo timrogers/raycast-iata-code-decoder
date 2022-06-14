@@ -6,8 +6,6 @@ export interface Airline {
   id: string;
   name: string;
   iataCode: string;
-  logoLockupUrl?: string;
-  logoSymbolUrl?: string;
 }
 
 interface AirlineSearchState {
@@ -51,7 +49,6 @@ function AirlineListItem({ airline }: { airline: Airline }) {
     <List.Item
       title={airline.iataCode}
       subtitle={airline.name}
-      icon={airline.logoSymbolUrl}
       actions={
         <ActionPanel>
           <ActionPanel.Section>
