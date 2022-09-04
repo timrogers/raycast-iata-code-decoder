@@ -1,6 +1,7 @@
 import { ActionPanel, Action, List, showToast, Toast } from "@raycast/api";
 import { useState, useEffect, useRef, useCallback } from "react";
 import fetch, { AbortError } from "node-fetch";
+import { AbortSignal as NodeFetchAbortSignal } from "./types";
 
 export interface Airline {
   id: string;
@@ -118,7 +119,9 @@ async function performSearch(searchText: string, signal: AbortSignal): Promise<A
 
   const response = await fetch("https://iata-code-decoder-api.herokuapp.com/airlines" + "?" + params.toString(), {
     method: "get",
-    signal: signal,
+    // Typescript's idea of an AbortSignal and node-fetch's idea of an AbortSignal
+    // don't seem to match. This handles it.
+    signal: signal as NodeFetchAbortSignal,
   });
 
   const json = (await response.json()) as AirlineSearchResponse;
