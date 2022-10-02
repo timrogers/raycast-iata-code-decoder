@@ -35,7 +35,7 @@
     "node-fetch": "^3.2.10"
   },
   "devDependencies": {
-    "@types/node": "~18.7.14",
+    "@types/node": "~18.7.23",
     "@types/react": "^18.0.17",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
     "@typescript-eslint/parser": "^5.36.1",
