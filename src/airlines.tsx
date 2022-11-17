@@ -9,6 +9,7 @@ export interface Airline {
   iataCode: string;
   logoLockupUrl?: string;
   logoSymbolUrl?: string;
+  conditionsOfCarriageUrl?: string;
 }
 
 interface AirlineSearchState {
@@ -57,6 +58,9 @@ function AirlineListItem({ airline }: { airline: Airline }) {
         <ActionPanel>
           <ActionPanel.Section>
             <Action.CopyToClipboard title="Copy Name to Clipboard" content={airline.name} />
+            {airline.conditionsOfCarriageUrl && (
+              <Action.OpenInBrowser title="Open Conditions of Carriage" url={airline.conditionsOfCarriageUrl} />
+            )}
           </ActionPanel.Section>
         </ActionPanel>
       }
