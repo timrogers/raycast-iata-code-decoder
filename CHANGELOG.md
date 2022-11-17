@@ -1,5 +1,10 @@
 # IATA Code Decoder Changelog
 
+## [v1.2.0] - 2022-11-17
+
+* Add support for viewing an airline's conditions of carriage in the "Decode IATA Airline Code" command
+* Load data from Render rather than Heroku, to keep the extension going once Heroku drops their free tier
+
 ## [v1.1.0] - 2022-06-14
 
 * Display airline logos in the "Decode IATA Airline Code" command
