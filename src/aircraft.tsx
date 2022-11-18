@@ -2,6 +2,7 @@ import { ActionPanel, Action, List, showToast, Toast } from "@raycast/api";
 import { useState, useEffect, useRef, useCallback } from "react";
 import fetch, { AbortError } from "node-fetch";
 import { AbortSignal as NodeFetchAbortSignal } from "./types";
+import { first } from "./utils";
 
 export interface Aircraft {
   id: string;
@@ -69,6 +70,15 @@ function useSearch(): { state: AircraftSearchState; search: (text: string) => vo
     async function search(searchText: string) {
       cancelRef.current?.abort();
       cancelRef.current = new AbortController();
+
+      if (searchText === "") {
+        return setState((oldState) => ({
+          ...oldState,
+          isLoading: false,
+          results: [],
+        }));
+      }
+
       setState((oldState) => ({
         ...oldState,
         isLoading: true,
@@ -77,7 +87,7 @@ function useSearch(): { state: AircraftSearchState; search: (text: string) => vo
         const results = await performSearch(searchText, cancelRef.current.signal);
         setState((oldState) => ({
           ...oldState,
-          results: results,
+          results: first(results, 50),
           isLoading: false,
         }));
       } catch (error) {
