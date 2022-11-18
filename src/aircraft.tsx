@@ -70,6 +70,15 @@ function useSearch(): { state: AircraftSearchState; search: (text: string) => vo
     async function search(searchText: string) {
       cancelRef.current?.abort();
       cancelRef.current = new AbortController();
+
+      if (searchText === "") {
+        return setState((oldState) => ({
+          ...oldState,
+          isLoading: false,
+          results: [],
+        }));
+      }
+
       setState((oldState) => ({
         ...oldState,
         isLoading: true,

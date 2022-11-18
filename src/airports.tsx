@@ -102,6 +102,15 @@ function useSearch(): { state: AirportSearchState; search: (text: string) => voi
     async function search(searchText: string) {
       cancelRef.current?.abort();
       cancelRef.current = new AbortController();
+
+      if (searchText === "") {
+        return setState((oldState) => ({
+          ...oldState,
+          isLoading: false,
+          results: [],
+        }));
+      }
+
       setState((oldState) => ({
         ...oldState,
         isLoading: true,
