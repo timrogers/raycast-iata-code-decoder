@@ -1,5 +1,9 @@
 # IATA Code Decoder Changelog
 
+## [v1.2.1] - 2023-03-21
+
+* Bump dependencies
+
 ## [v1.2.0] - 2022-11-18
 
 * Add support for viewing an airline's conditions of carriage in the "Decode IATA Airline Code" command
