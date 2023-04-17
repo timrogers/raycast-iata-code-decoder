@@ -43,7 +43,7 @@
     "eslint-config-prettier": "^8.8.0",
     "prettier": "^2.8.7",
     "react-devtools": "^4.27.4",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.4"
   },
   "scripts": {
     "build": "ray build -e dist",
