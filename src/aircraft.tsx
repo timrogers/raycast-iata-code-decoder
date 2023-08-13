@@ -104,7 +104,7 @@ function useSearch(): { state: AircraftSearchState; search: (text: string) => vo
         showToast({ style: Toast.Style.Failure, title: "Oops! Something went wrong.", message: String(error) });
       }
     },
-    [cancelRef, setState]
+    [cancelRef, setState],
   );
 
   useEffect(() => {
