@@ -30,7 +30,7 @@
     "Data"
   ],
   "dependencies": {
-    "@raycast/api": "^1.76.0",
+    "@raycast/api": "^1.79.1",
     "country-code-emoji": "^2.3.0",
     "node-fetch": "^3.3.2"
   },
@@ -42,7 +42,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "prettier": "^3.3.2",
-    "react-devtools": "^4.28.0",
+    "react-devtools": "^5.2.0",
     "typescript": "^5.5.3"
   },
   "scripts": {
