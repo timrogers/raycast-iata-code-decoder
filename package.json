@@ -30,7 +30,7 @@
     "Data"
   ],
   "dependencies": {
-    "@raycast/api": "^1.88.4",
+    "@raycast/api": "^1.92.0",
     "country-code-emoji": "^2.3.0",
     "node-fetch": "^3.3.2"
   },
